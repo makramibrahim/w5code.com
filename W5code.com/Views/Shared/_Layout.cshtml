@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - W5code.com</title>
+    <link rel="shortcut icon" href="~/images/titleLogo.png"/>
 
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
@@ -15,6 +16,12 @@
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
     </environment>
+    <style>
+        .navbar-brand {
+            width: 180px;
+            height: 95px;
+        }     
+    </style>
 </head>
 <body>
     <nav class="navbar btn-block navbar-default navbar-fixed-top">
@@ -26,19 +33,19 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index"><img src="~/images/logo.png" style="width:25%"/></a>
+                <a asp-area="" asp-controller="Home" asp-action="Index"><img class="navbar-brand" alt="logo" src="~/images/logo.png" /></a>
             </div>
-            <div class="navbar-collapse collapse pull-left">
+            <div class="navbar-collapse collapse" style="margin-top:20px;">
                 <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Communities" asp-action="Index">Communities</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                    <li><a class="btn-lg" asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li><a class="btn-lg" asp-area="" asp-controller="Communities" asp-action="Index">Communities</a></li>
+                    <li><a class="btn-lg" asp-area="" asp-controller="Home" asp-action="About">About</a></li>
+                    <li><a class="btn-lg" asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
                 </ul>
                 @await Html.PartialAsync("_LoginPartial")
             </div>
         </div>
-    </nav>
+    </nav><br /><br />
     <section>
         @RenderBody()
 
