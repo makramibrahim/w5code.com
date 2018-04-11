@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "W5code.com", "W5code.com\W5code.com.csproj", "{A559899C-B0E0-4089-B5F0-D01A47402A26}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "W5code", "W5code.com\W5code.csproj", "{A559899C-B0E0-4089-B5F0-D01A47402A26}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

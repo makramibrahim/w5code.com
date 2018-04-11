@@ -17,7 +17,7 @@
     </environment>
 </head>
 <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
+    <nav class="navbar btn-block navbar-default navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -26,11 +26,12 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">W5code.com</a>
+                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">W5code</a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li><a asp-area="" asp-controller="Communities" asp-action="Index">Communities</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
                 </ul>
@@ -38,13 +39,14 @@
             </div>
         </div>
     </nav>
-    <div class="container body-content">
+    <section>
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; 2018 - W5code.com</p>
-        </footer>
-    </div>
+
+    </section><hr />
+
+    <footer class="panel-footer">
+        <p class="text-center">&copy; @DateTime.Now.Year - W5code.com</p>
+    </footer>
 
     <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
