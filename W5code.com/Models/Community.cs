@@ -10,12 +10,12 @@ namespace W5code.Models
     {
         public int ID              { get; set; }
         [Display(Name = "Post Date")]
-        public DateTime PostDate   { get; set; }
+        public string PostDate   { get; set; }
         [Display(Name = "User Name")]
         public string Name         { get; set; }
-        [Display(Name = "Questions")]
+        [Display(Name = "Subject")]
         public string Subject      { get; set; }
-        [Display(Name = "Message")]
+        [Display(Name = "Question")]
         public string BodyMessage  { get; set; }
     }
 }

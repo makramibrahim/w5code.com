@@ -1,17 +1,46 @@
 ﻿@model IEnumerable<W5code.Models.Community>
 
-@{
-    ViewData["Title"] = "Index";
-}
+<div class="container body-content panel-body">
+    <br />
+    @{
+        ViewData["Title"] = "Index";
+    }
 
-<h2>Index</h2>
+    <h3>Developers Community</h3><br />
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
+
+    <div class="container">
+        @foreach (var item in Model)
+        {
+
+        <p><b> @Html.DisplayNameFor(model => model.PostDate):</b> @Html.DisplayFor(modelItem => item.PostDate)</p>   
+
+                <p><b> @Html.DisplayNameFor(model => model.Name):</b> @Html.DisplayFor(modelItem => item.Name)</p>
+
+               <p><b> @Html.DisplayNameFor(model => model.Subject): </b>@Html.DisplayFor(modelItem => item.Subject)</p>
+
+                <p><b> @Html.DisplayNameFor(model => model.BodyMessage): </b>@Html.DisplayFor(modelItem => item.BodyMessage)</p>
+
+                <p>
+                    <a asp-action="Create">New Post</a> |
+                    <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+
+                </p><hr />
+                     
+        }
+
+   </div>
+
+
+
+    @*<p>
+        <a asp-action="">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
                 <th>
                     @Html.DisplayNameFor(model => model.PostDate)
                 </th>
@@ -24,30 +53,32 @@
                 <th>
                     @Html.DisplayNameFor(model => model.BodyMessage)
                 </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.PostDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Subject)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BodyMessage)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PostDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Subject)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BodyMessage)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>*@
+</div>
