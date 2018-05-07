@@ -7,78 +7,85 @@
     }
 
     <h3>Developers Community</h3><br />
-
-
-    <div class="container">
-        @foreach (var item in Model)
-        {
-
-        <p><b> @Html.DisplayNameFor(model => model.PostDate):</b> @Html.DisplayFor(modelItem => item.PostDate)</p>   
-
-                <p><b> @Html.DisplayNameFor(model => model.Name):</b> @Html.DisplayFor(modelItem => item.Name)</p>
-
-               <p><b> @Html.DisplayNameFor(model => model.Subject): </b>@Html.DisplayFor(modelItem => item.Subject)</p>
-
-                <p><b> @Html.DisplayNameFor(model => model.BodyMessage): </b>@Html.DisplayFor(modelItem => item.BodyMessage)</p>
-
-                <p>
-                    <a asp-action="Create">New Post</a> |
-                    <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
-
-                </p><hr />
                      
-        }
+    <a class="btn btn-success" asp-action="Create">New Post</a>
+    <br /><br />
+          <div class="body-content">
 
-   </div>
+   @foreach (var item in Model)
+    {
+              <div class="alert alert-dismissible alert-info">
+                  <h3>@Html.DisplayFor(modelItem => item.Name)</h3>
+                  <h4>@Html.DisplayFor(modelItem => item.PostDate)</h4>
+
+                  <h5>@Html.DisplayFor(modelItem => item.Subject)</h5>
+                 
+                  <div class="alert alert-dismissible alert-success">
+                      <p>
+                          <b> @Html.DisplayNameFor(model => model.BodyMessage): </b>
+                          @Html.DisplayFor(modelItem => item.BodyMessage)
+                      </p>
+                      <p class="mb-0">Best check yo self, you're not looking too good. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, <a href="#" class="alert-link">vel scelerisque nisl consectetur et</a>.</p>
+                  </div>
+              </div>
+
+                  <p>
+                      <a class="btn btn-default" asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                      <a class="btn btn-info" asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                      <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+
+                  </p><hr />
+
+    }
+                  <a class="btn btn-success" asp-action="Create">New Post</a>
+              </div>
 
 
 
     @*<p>
-        <a asp-action="">Create New</a>
-    </p>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.PostDate)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Name)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Subject)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.BodyMessage)
-                </th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
+            <a asp-action="">Create New</a>
+        </p>
+        <table class="table">
+            <thead>
                 <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.PostDate)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Name)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Subject)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.BodyMessage)
-                    </td>
-                    <td>
-                        <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
-                        <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
-                        <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
-                    </td>
+                    <th>
+                        @Html.DisplayNameFor(model => model.PostDate)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Name)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Subject)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.BodyMessage)
+                    </th>
+                    <th></th>
                 </tr>
-            }
-        </tbody>
-    </table>*@
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PostDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Subject)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.BodyMessage)
+                        </td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                            <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                            <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>*@
 </div>
